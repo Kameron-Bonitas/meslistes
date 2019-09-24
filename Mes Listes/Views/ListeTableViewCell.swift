@@ -5,7 +5,7 @@
 //  Created by Anastasiia Tanczak on 17/08/2018.
 //  Copyright © 2018 Ana Viktoriv. All rights reserved.
 //
-
+// Just addibg some localization
 import UIKit
 import SwipeCellKit
 
