@@ -21,19 +21,19 @@ enum TimeIntervals {
 }
 
 enum SettingsAlert {
-    static let title = "We need your permission"
-    static let message = "Go to settings"
-    static let settingActionTitle = "Settings"
-    static let cancelActionTitle = "Cancel"
+    static let title = NSLocalizedString("We need your permission", comment: "We need your permission")
+    static let message = NSLocalizedString("Go to settings", comment: "Go to settings")
+    static let settingActionTitle = NSLocalizedString("Settings", comment: "Settings")
+    static let cancelActionTitle = NSLocalizedString("Cancel", comment: "Cancel")
 }
 
 enum NotificationReminder {
-    static var title = "A little reminder:"
+    static var title = NSLocalizedString("A little reminder:", comment: "A little reminder:")
     static var body = ""
 }
 
 enum NavigationBar {
-    static let title = "meslistes"
+     static let title = NSLocalizedString("meslistes", comment: "meslistes")
     
     static var rightButtonImage = UIImage(named: "plus-icon")
     
@@ -56,9 +56,9 @@ enum Color {
 }
 
 enum ListNames {
-    static var name1 = "Shopping list"
-    static var name2 = "To do"
-    static var name3 = "Travelpack"
+    static var name1 = NSLocalizedString ("Shopping list", comment: "Shopping  list")
+    static var name2 = NSLocalizedString ("To do", comment: "To do")
+    static var name3 = NSLocalizedString ("Travelpack", comment: "Travelpack")
 }
 
 enum Icons {
@@ -70,21 +70,21 @@ enum Icons {
 }
 
 enum TextFieldItems {
-    static let placeholderText = "Type your item here..."
+    static let placeholderText = NSLocalizedString("Type your item here...", comment: "Type your item here...")
     static let height: CGFloat = 40
     static let distanceFromPlusButton: CGFloat = 10
     static let distanceFromTableView: CGFloat = 10
 }
 
 enum AlertCameraPhotoLibrary {
-    static let cameraActionTitle = "Take picture with Camera"
-    static let photoLibraryActionTitle = "Choose from Photo Library"
-    static let cancelActionTitle = "Cancel"
+    static let cameraActionTitle = NSLocalizedString("Take picture with Camera", comment: "Take picture with Camera")
+    static let photoLibraryActionTitle = NSLocalizedString("Choose from Photo Library", comment: "Choose from Photo Library")
+    static let cancelActionTitle = NSLocalizedString("Cancel", comment: "Cancel")
 }
 
 enum NoCameraAlert {
-    static let title = "Warning"
-    static let message = "You don't have camera"
-    static let okActionTitle = "OK"
+    static let title = NSLocalizedString("Warning", comment: "Warning")
+    static let message = NSLocalizedString("You don't have camera", comment: "You don't have camera")
+    static let okActionTitle = NSLocalizedString("OK", comment: "OK")
 }
 

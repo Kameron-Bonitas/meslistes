@@ -16,7 +16,7 @@ class UserTextInputViewController: UIViewController {
 
     let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
     
-    let textFieldPlaceHolderTextLitteral = "name your new list..."
+    let textFieldPlaceHolderTextLitteral = NSLocalizedString ("name your new list...", comment: "name your new list")
     let textFieldPlaceholderTextColor = UIColor.init(red: 140/255, green: 140/255, blue: 140/255, alpha: 1)
     let textFieldLeftPadding: CGFloat = 10
     let textFieldBorderWidth: CGFloat = 0.5
@@ -146,14 +146,14 @@ class UserTextInputViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         //save button
-        okButton.setTitle("OK", for: .normal)
+        okButton.setTitle(NSLocalizedString("OK", comment: "OK"), for: .normal)
         okButton.backgroundColor = UIColor.clear
         okButton.setTitleColor(UIColor.black, for: .normal)
         okButton.addTarget(self, action: #selector(oKButtonAction), for: .touchUpInside)
 
 
         //cancel button
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(NSLocalizedString("Cancel", comment: "Cancel"), for: .normal)
         cancelButton.setTitleColor(UIColor.black, for: .normal)
         cancelButton.backgroundColor = UIColor.clear
         cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)

@@ -100,9 +100,9 @@ class DatePickerPopupViewController: UIViewController {
         titleLabel.backgroundColor = titleLabelBackgroundColor
         titleLabel.textAlignment = .center
         if dateForCalendar == true{
-            titleLabel.text = titleLabelTextOptions["calendar"]
+            titleLabel.text = NSLocalizedString(titleLabelTextOptions["reminder"]!, comment: "reminder")
         }else{
-            titleLabel.text = titleLabelTextOptions["reminder"]
+            titleLabel.text = NSLocalizedString(titleLabelTextOptions["reminder"]!, comment: "reminder")
         }
         mainView.addSubview(titleLabel)
         
@@ -110,14 +110,14 @@ class DatePickerPopupViewController: UIViewController {
         mainView.addSubview(datePicker)
         
         //save button
-        okButton.setTitle("OK", for: .normal)
+        okButton.setTitle(NSLocalizedString("OK", comment:"OK"), for: .normal)
         okButton.backgroundColor = UIColor.clear
         okButton.setTitleColor(UIColor.black, for: .normal)
         okButton.addTarget(self, action: #selector(oKButtonAction), for: .touchUpInside)
         
         
         //cancel button
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(NSLocalizedString("Cancel", comment: "Cancel"), for: .normal)
         cancelButton.setTitleColor(UIColor.black, for: .normal)
         cancelButton.backgroundColor = UIColor.clear
         cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
@@ -184,13 +184,12 @@ class DatePickerPopupViewController: UIViewController {
         if dateForCalendar == true {
             saveEventToCalendar!(datePicker.date)
             
-            let  message = "Your event has been successfully added to calendar."
-           presentAlertConfirmation(with: message)
+            let  message = NSLocalizedString("Your event has been successfully added to calendar.", comment: "Your event has been successfully added to calendar."); presentAlertConfirmation(with: message)
         }else{
             let components = datePicker.calendar.dateComponents([.day, .month, .year, .hour, .minute], from: datePicker.date)
             setReminder!(components)
             
-             let  message = "The reminder has been successfully created."
+            let  message = NSLocalizedString( "The reminder has been successfully created.", comment: "The reminder has been successfully created.")
             presentAlertConfirmation(with: message)
         }
         

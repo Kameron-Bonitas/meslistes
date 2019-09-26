@@ -168,7 +168,7 @@ class ItemTableViewCell: SwipeTableViewCell, UITextViewDelegate {
                 photoButton.isHidden = true
             }
         }else{
-            titleTextView.text = "You haven't created an item yet"
+            titleTextView.text = NSLocalizedString("You haven't created an item yet", comment: "You haven't created an item yet")
         }
     }
     override func prepareForReuse() {
