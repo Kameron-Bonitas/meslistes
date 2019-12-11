@@ -16,7 +16,7 @@
 "meslistes" = "Meslistes";
 
 "Shopping list" = "Einkaufsliste";
-"to do" = "To do Liste";
+"To do" = "To do Liste";
 "Travelpack" = "Reiseliste";
 
 "Type your item here..." = "Schreiben Sie Ihre Notiz hier...";
@@ -34,7 +34,7 @@
 "Add to calendar" = "Zum Kalender hinzufügen";
 "name your new list..." = "Benennen...";
 
-"Your event has been successfully added to calendar." = "Your event has been successfully added to calendar.";
-"The reminder has been successfully created." = "The reminder has been successfully created.";
-"calendar" = "calendar";
-"reminder" = "reminder";
+"Your event has been successfully added to calendar." = "Ihr Ereignis wurde erfolgreich zum Kalender hinzugefügt";
+"The reminder has been successfully created." = "TErinnerung ist erfolgreich abgespeichert.";
+"calendar" = "Erinnerung ist erfolgreich abgespeichert.";
+"reminder" = "Erinnerungen";

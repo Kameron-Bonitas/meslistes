@@ -37,7 +37,9 @@ enum NavigationBar {
     
     static var rightButtonImage = UIImage(named: "plus-icon")
     
-    static let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "Zing Sans Rust Regular", size: 28.5)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+    static let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "Zing Sans Rust Regular", size: 28.5)!, NSAttributedString.Key.foregroundColor:
+//        UIColor.black]
+        UIColor (named: "popUpButtonFont")]
 }
 
 enum ImageInListController {
@@ -50,9 +52,12 @@ enum ImageInListController {
 }
 
 enum Color {
-    static let swipeCellBackgroundColorForDefault = UIColor.init(red: 240/255, green: 214/255, blue: 226/255, alpha: 1)
-    static let swipeCellBackGroundColorForDestructive = UIColor.init(red: 242/255, green: 93/255, blue: 97/255, alpha: 1)
-    static let separatorCustomColor = UIColor.init(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+    static let swipeCellBackgroundColorForDefault = UIColor (named: "swipeCellBackgroundColorForDefault")
+//        .init(red: 240/255, green: 214/255, blue: 226/255, alpha: 1)
+    static let swipeCellBackGroundColorForDestructive = UIColor (named: "swipeCellBackGroundColorForDestructive ")
+//        .init(red: 242/255, green: 93/255, blue: 97/255, alpha: 1)
+    static let separatorCustomColor = UIColor (named: "separatorCustomColor")
+//        .init(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
 }
 
 enum ListNames {
@@ -71,6 +76,7 @@ enum Icons {
 
 enum TextFieldItems {
     static let placeholderText = NSLocalizedString("Type your item here...", comment: "Type your item here...")
+
     static let height: CGFloat = 40
     static let distanceFromPlusButton: CGFloat = 10
     static let distanceFromTableView: CGFloat = 10

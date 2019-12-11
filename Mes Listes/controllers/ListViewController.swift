@@ -45,7 +45,8 @@ class ListViewController: UIViewController {
     private func setupNavigationBar () {
         
         self.title = NavigationBar.title
-        navigationController?.navigationBar.titleTextAttributes = NavigationBar.titleAttributes
+//        navigationController?.navigationBar.titleTextAttributes = NavigationBar.titleAttributes
+        navigationController?.navigationBar.titleTextAttributes = NavigationBar.titleAttributes as [NSAttributedString.Key : Any]
         NavigationBar.rightButtonImage = NavigationBar.rightButtonImage?.withRenderingMode(.alwaysOriginal)
         let rightNavigationButton = UIBarButtonItem(image: NavigationBar.rightButtonImage, style: .plain, target: self, action: #selector (rightBarButtonAction))
         self.navigationItem.setRightBarButton(rightNavigationButton, animated: false)
@@ -116,6 +117,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.fillWith(model: helperRealmManager.lists?[indexPath.row])
         cell.titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        
         cell.titleLabel.adjustsFontForContentSizeCategory = true
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
@@ -331,6 +333,8 @@ extension ListViewController: SwipeTableViewCellDelegate {
         case EKAuthorizationStatus.restricted, EKAuthorizationStatus.denied:
             // We need to help them give us permission
             goToSettingsAllert(alertTitle: SettingsAlert.title, alertMessage: SettingsAlert.message)
+        @unknown default:
+            print("unknown case of authorisationStatus")
         }
     }
     
@@ -387,6 +391,8 @@ extension ListViewController: SwipeTableViewCellDelegate {
                 }  
             case .denied, .notDetermined, .provisional:
                 self.goToSettingsAllert(alertTitle: SettingsAlert.title, alertMessage: SettingsAlert.message)
+            @unknown default:
+                print("unknown case of authorisationStatus")
             }
         }
     }

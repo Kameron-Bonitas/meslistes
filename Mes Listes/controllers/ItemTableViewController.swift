@@ -52,8 +52,17 @@ class ItemTableViewController: UIViewController {
     private let changeTitleImage = UIImage(named: "editTitle-item-icon")
     
 
-    private let navigationBarAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 19, weight: .light), NSAttributedString.Key.foregroundColor: UIColor.black]
-    private let navigationBarAttributes2 = [NSAttributedString.Key.font: UIFont(name: "Zing Sans Rust Regular", size: 28.5)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+    private let navigationBarAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 19, weight: .light),
+// DDDAAAARRRKK
+    NSAttributedString.Key.foregroundColor:
+            UIColor (named: "popUpButtonFont")]
+//    NSAttributedString.Key.foregroundColor: UIColor.black]
+    private let navigationBarAttributes2 = [NSAttributedString.Key.font: UIFont(name: "Zing Sans Rust Regular", size: 28.5)!,
+// DDAAARRRRKKK
+    NSAttributedString.Key.foregroundColor:
+    UIColor (named: "popUpButtonFont")]
+                                            
+//NSAttributedString.Key.foregroundColor: UIColor.black]
     
     //MARK: - Properties
     //get access to shared instance of the file manager
@@ -138,10 +147,13 @@ class ItemTableViewController: UIViewController {
         let title = selectedListe?.name.uppercased() ?? "meslistes"
         self.title = title
         
-        navigationController?.navigationBar.titleTextAttributes = navigationBarAttributes
+        navigationController?.navigationBar.titleTextAttributes = navigationBarAttributes as [NSAttributedString.Key : Any]
         
         let leftNavigationButton = UIBarButtonItem(image: leftNavigationBarButtonImage , style: .plain, target: self, action: #selector(leftBarButtonAction))
-        leftNavigationButton.tintColor = .black
+// DAAAARRRKKKKK
+        leftNavigationButton.tintColor = UIColor (named: "popUpButtonFont")
+            
+//            .black
         leftNavigationButton.imageInsets  = .init(top: navigationBarTopInset, left: navigationBarLeftInset, bottom: navigationBarBottomInset, right: navigationBarRightInset)
         
         self.navigationItem.setLeftBarButton(leftNavigationButton, animated: false)
@@ -159,7 +171,11 @@ class ItemTableViewController: UIViewController {
         
         //subviewForTextField
         subviewForTextFieldAndPlusButton.backgroundColor = .clear
-        subviewForTextFieldAndPlusButton.layer.borderColor = UIColor.white.cgColor
+        
+//  DDAAAARRRRKKKK
+        subviewForTextFieldAndPlusButton.layer.borderColor = UIColor(named: "separatorCustomColor")?.cgColor 
+            //            UIColor.white.cgColor
+            
         subviewForTextFieldAndPlusButton.layer.cornerRadius = subviewForTextFieldAndPlusButtonCornerRadius
         subviewForTextFieldAndPlusButton.layer.borderWidth = subviewForTextFieldAndPlusButtonBorderWidth
         
@@ -170,6 +186,9 @@ class ItemTableViewController: UIViewController {
         textFieldItems.placeholder = TextFieldItems.placeholderText
         textFieldItems.delegate = self
         textFieldItems.returnKeyType = UIReturnKeyType.next
+        
+//    DARK dodav
+//        textFieldItems.font.colour
         
         //textFieldItems.becomeFirstResponder()
         subviewForTextFieldAndPlusButton.addSubview(textFieldItems)
@@ -184,7 +203,8 @@ class ItemTableViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: "ItemTableViewCell")
         tableView.backgroundColor = UIColor.clear
-        tableView.separatorColor = UIColor.white
+        tableView.separatorColor = Color.separatorCustomColor
+//            UIColor.white
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = .init(top: separatorInset, left: separatorInset, bottom: separatorInset, right: separatorInset)
         tableView.estimatedRowHeight = estimatedRowHeight
@@ -248,7 +268,7 @@ class ItemTableViewController: UIViewController {
     @objc func leftBarButtonAction () {
         
         
-        navigationController?.navigationBar.titleTextAttributes = navigationBarAttributes2
+        navigationController?.navigationBar.titleTextAttributes = navigationBarAttributes2 as [NSAttributedString.Key : Any]
         _ = navigationController?.popToRootViewController(animated: true)
         
     }
@@ -331,6 +351,8 @@ class ItemTableViewController: UIViewController {
             // We need to help them give us permission
             
             goToSettingsAllert()
+        @unknown default:
+            print("unknown case of authorisationStatus")
         }
     }
     
@@ -382,6 +404,8 @@ class ItemTableViewController: UIViewController {
                 }
             case .denied, .provisional,.notDetermined:
                 self!.goToSettingsAllert()
+            @unknown default:
+                print("unknown case of authorisationStatus")
             }
         }
     }
@@ -428,9 +452,12 @@ extension ItemTableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.fillWith(model: helperRealmManager.items?[indexPath.row])
         cell.titleTextView.font = UIFont.preferredFont(forTextStyle: .body)
         cell.titleTextView.adjustsFontForContentSizeCategory = true
+ 
+//        DARRRRK color of text cell'u
+//        cell.titleTextView.textColor = UIColor (named: "itemsVCcellTextColour")
+        
         cell.titleTextView.isEditable = false
         cell.backgroundColor = UIColor.clear
-        
         cell.selectionStyle = .none
         return cell
     }
@@ -699,6 +726,8 @@ extension ItemTableViewController: UINavigationControllerDelegate, UIImagePicker
                 self?.openCamera()
             }
         case .restricted, .denied: goToSettingsAllert()
+        @unknown default:
+            print("unknown case of authorisationStatus")
         }
     }
     
@@ -756,6 +785,8 @@ extension ItemTableViewController: UINavigationControllerDelegate, UIImagePicker
         case .notDetermined: requestPhotoLibraryPermission()
         case .authorized: DispatchQueue.main.async {[weak self] in self?.openPhotoLibrary() }
         case .restricted, .denied: goToSettingsAllert()
+        @unknown default:
+            print("unknown case of authorisationStatus")
         }
     }
     

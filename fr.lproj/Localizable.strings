@@ -15,8 +15,8 @@
 
 "meslistes" = "meslistes";
 
-"Shopping  list" = "liste";
-"to do" = "les tâches à faire";
+"Shopping list" = "liste";
+"To do" = "les tâches à faire";
 "Travelpack" = "Voyage";
 
 "Type your item here..." = "Ajouter une tâche...";
@@ -36,7 +36,7 @@
 "Add to calendar" = "Ajouter dans le calendrier";
 "name your new list..." = "taper le nom de la liste";
 
-"Your event has been successfully added to calendar." = "Your event has been successfully added to calendar.";
-"The reminder has been successfully created." = "The reminder has been successfully created.";
-"calendar" = "calendar";
-"reminder" = "reminder";
+"Your event has been successfully added to calendar." = "Votre événement a été ajouté dans l'agenda";
+"The reminder has been successfully created." = "Votre rappel a été créé";
+"calendar" = "L'agenda";
+"reminder" = "Rappel";

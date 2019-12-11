@@ -16,8 +16,8 @@
 "meslistes" = "меслістес";
 
 "Shopping list" = "Закупи";
-"to do" = "Зробити";
-"Travelpack" = "Заплічник";
+"To do" = "Зробити";
+"Travelpack" = "Подорож";
 
 "Type your item here..." = "Надрукуйте Ваші нотатки тут...";
 
@@ -29,7 +29,7 @@
 "You don't have camera" = "Камера відсутня";
 "OK" = "Гаразд";
 
-"You haven't created a list yet" = "Ви ще не створили нотатку";
+"You haven't created a list yet" = "Ви ще не створили список";
 "You haven't created an item yet" = "Ви ще не створили нотатку";
 "Add to reminder" = "Додати до Нагадувань";
 "Add to calendar" = "Додати до Календаря";

@@ -20,8 +20,11 @@ class DatePickerPopupViewController: UIViewController {
     private let mainViewWidth: CGFloat = 300
     private let titleLabelHeight: CGFloat = 40
     private let buttonHeight: CGFloat = 45
-    private let titleLabelBackgroundColor = UIColor.init(red: 240/255, green: 214/255, blue: 226/255, alpha: 1)
-    private let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
+    private let titleLabelBackgroundColor = UIColor (named: "userTextInputVCbackgroundMainView")
+//        UIColor.init(red: 240/255, green: 214/255, blue: 226/255, alpha: 1)
+    private let alertViewGrayColor = UIColor (named: "userTextInputVCbuttonsBorder")
+        
+//        UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
     
     //MARK: - VARIABLES
     var dateForCalendar = false
@@ -40,7 +43,12 @@ class DatePickerPopupViewController: UIViewController {
     
     let mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.white
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = UIColor (named: "userTextInputVCbackgroundMainView")
+//                UIColor.systemBackground
+        } else {
+            // Fallback on earlier versions
+        }
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
         return view
@@ -77,10 +85,10 @@ class DatePickerPopupViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        cancelButton.addBorder(side: .Top, color: alertViewGrayColor, width: 1)
-        cancelButton.addBorder(side: .Right, color: alertViewGrayColor, width: 0.5)
-        okButton.addBorder(side: .Top, color: alertViewGrayColor, width: 1)
-        okButton.addBorder(side: .Left, color: alertViewGrayColor, width: 0.5)
+        cancelButton.addBorder(side: .Top, color: alertViewGrayColor!, width: 1)
+        cancelButton.addBorder(side: .Right, color: alertViewGrayColor!, width: 0.5)
+        okButton.addBorder(side: .Top, color: alertViewGrayColor!, width: 1)
+        okButton.addBorder(side: .Left, color: alertViewGrayColor!, width: 0.5)
     }
     
     
@@ -100,9 +108,9 @@ class DatePickerPopupViewController: UIViewController {
         titleLabel.backgroundColor = titleLabelBackgroundColor
         titleLabel.textAlignment = .center
         if dateForCalendar == true{
-            titleLabel.text = NSLocalizedString(titleLabelTextOptions["reminder"]!, comment: "reminder")
+            titleLabel.text = NSLocalizedString(titleLabelTextOptions["calendar"]!, comment: "calendar")
         }else{
-            titleLabel.text = NSLocalizedString(titleLabelTextOptions["reminder"]!, comment: "reminder")
+            titleLabel.text = NSLocalizedString(titleLabelTextOptions["reminder"]!, comment: "reminder") 
         }
         mainView.addSubview(titleLabel)
         
@@ -110,20 +118,20 @@ class DatePickerPopupViewController: UIViewController {
         mainView.addSubview(datePicker)
         
         //save button
-        okButton.setTitle(NSLocalizedString("OK", comment:"OK"), for: .normal)
+        okButton.setTitle (NSLocalizedString ("OK", comment: "OK"), for: .normal)
         okButton.backgroundColor = UIColor.clear
-        okButton.setTitleColor(UIColor.black, for: .normal)
+        okButton.setTitleColor(UIColor (named: "popUpButtonFont"), for: .normal)
         okButton.addTarget(self, action: #selector(oKButtonAction), for: .touchUpInside)
         
         
         //cancel button
-        cancelButton.setTitle(NSLocalizedString("Cancel", comment: "Cancel"), for: .normal)
-        cancelButton.setTitleColor(UIColor.black, for: .normal)
-        cancelButton.backgroundColor = UIColor.clear
-        cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
-        mainView.addSubview(buttonStackView)
-    }
-    
+        cancelButton.setTitle (NSLocalizedString("Cancel", comment: "Cancel"), for: .normal)
+            cancelButton.setTitleColor(UIColor(named: "popUpButtonFont"), for: .normal)
+            cancelButton.backgroundColor = UIColor.clear
+            cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
+            mainView.addSubview(buttonStackView)
+        }
+        
     private func setupLayouts () {
         //backgroundColorView
         backgroundColorView.translatesAutoresizingMaskIntoConstraints = false
