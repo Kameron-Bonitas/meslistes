@@ -45,7 +45,6 @@ class DatePickerPopupViewController: UIViewController {
         let view = UIView()
         if #available(iOS 13.0, *) {
             view.backgroundColor = UIColor (named: "userTextInputVCbackgroundMainView")
-//                UIColor.systemBackground
         } else {
             // Fallback on earlier versions
         }

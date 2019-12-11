@@ -160,11 +160,3 @@ class ListeTableViewCell: SwipeTableViewCell {
     }
 }
 
-//extension UIColor {
-//class var appBG: UIColor {
-//    if let color = UIColor(named: "whiteViktor") {
-//        return color
-//    }
-//    fatalError("Could not find appBG color")
-//  }
-//}

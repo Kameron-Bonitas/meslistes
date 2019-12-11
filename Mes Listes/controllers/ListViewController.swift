@@ -117,7 +117,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.fillWith(model: helperRealmManager.lists?[indexPath.row])
         cell.titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        
         cell.titleLabel.adjustsFontForContentSizeCategory = true
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear

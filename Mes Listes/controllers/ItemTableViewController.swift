@@ -187,9 +187,6 @@ class ItemTableViewController: UIViewController {
         textFieldItems.delegate = self
         textFieldItems.returnKeyType = UIReturnKeyType.next
         
-//    DARK dodav
-//        textFieldItems.font.colour
-        
         //textFieldItems.becomeFirstResponder()
         subviewForTextFieldAndPlusButton.addSubview(textFieldItems)
         
@@ -204,7 +201,6 @@ class ItemTableViewController: UIViewController {
         tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: "ItemTableViewCell")
         tableView.backgroundColor = UIColor.clear
         tableView.separatorColor = Color.separatorCustomColor
-//            UIColor.white
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = .init(top: separatorInset, left: separatorInset, bottom: separatorInset, right: separatorInset)
         tableView.estimatedRowHeight = estimatedRowHeight
