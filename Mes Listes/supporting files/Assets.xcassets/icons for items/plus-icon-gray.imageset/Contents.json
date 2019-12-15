@@ -7,7 +7,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "combinedShapeCopy2.png",
+      "filename" : "combinedShapeCopy-1.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -23,7 +23,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "combinedShapeCopy2@2x.png",
+      "filename" : "combinedShapeCopy@2x-1.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -39,7 +39,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "combinedShapeCopy2@3x.png",
+      "filename" : "combinedShapeCopy@3x-1.png",
       "appearances" : [
         {
           "appearance" : "luminosity",

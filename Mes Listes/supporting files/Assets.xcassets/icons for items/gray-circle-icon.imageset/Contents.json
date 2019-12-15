@@ -7,7 +7,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "iconCopy4.png",
+      "filename" : "group2-1.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -23,7 +23,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "iconCopy4@2x.png",
+      "filename" : "group2@2x-1.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -39,7 +39,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "iconCopy4@3x.png",
+      "filename" : "group2@3x-1.png",
       "appearances" : [
         {
           "appearance" : "luminosity",

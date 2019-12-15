@@ -64,8 +64,12 @@ class ListViewController: UIViewController {
     
     //MARK: - Layout
     private func setupView () {
-        self.view.layer.contents = ImageInListController.background.cgImage
+//        self.view.layer.contents = ImageInListController.background.cgImage
+        // backgroundImageView
+        backgroundImageView.image = ImageInListController.background
+        backgroundImageView.contentMode = .scaleAspectFill
 
+        view.addSubview(backgroundImageView)
         //tableView
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,6 +83,9 @@ class ListViewController: UIViewController {
     }
     
     private func setupLayout() {
+        
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+         backgroundImageView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

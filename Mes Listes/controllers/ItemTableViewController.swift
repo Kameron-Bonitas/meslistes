@@ -162,12 +162,13 @@ class ItemTableViewController: UIViewController {
     
     private func setupViews () {
         
-        self.view.layer.contents = backgroundImage.cgImage
-        //        // backgroundImageView
-        //        backgroundImageView.image = backgroundImage
-        //        backgroundImageView.contentMode = .scaleAspectFill
-        //
-        //        view.addSubview(backgroundImageView)
+//        self.view.layer.contents = backgroundImage.cgImage
+//        self.view.layer.contentsGravity = .center
+                // backgroundImageView
+                backgroundImageView.image = backgroundImage
+                backgroundImageView.contentMode = .scaleAspectFit
+
+                view.addSubview(backgroundImageView)
         
         //subviewForTextField
         subviewForTextFieldAndPlusButton.backgroundColor = .clear
@@ -211,7 +212,9 @@ class ItemTableViewController: UIViewController {
     
     private func setupLayout() {
         
-        // backgroundImageView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+
+         backgroundImageView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
         
         //subViewTextField
         subviewForTextFieldAndPlusButton.translatesAutoresizingMaskIntoConstraints = false

@@ -6,7 +6,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "loadingPageDarkModeMEslistes0405.png",
+      "filename" : "darkMode07.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -22,7 +22,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "loadingPageDarkModeMEslistes0405@2x.png",
+      "filename" : "darkMode07@2x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -37,7 +37,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "loadingPageDarkModeMEslistes0405@3x.png",
+      "filename" : "darkMode07@3x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
