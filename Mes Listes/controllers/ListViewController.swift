@@ -85,8 +85,15 @@ class ListViewController: UIViewController {
     private func setupLayout() {
         
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-         backgroundImageView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+    NSLayoutConstraint.activate([
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         
+         ])
+//         backgroundImageView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+//
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
